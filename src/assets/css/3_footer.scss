@@ -1,0 +1,199 @@
+@import "./0_basic.scss";
+
+/* footer */
+
+footer {
+    @include mobile {
+        @include container($h:460px);
+    }
+    @include desktop {
+        @include container($h:400px);
+    }
+
+    .footer_info {
+        @include mobile {
+            @include container($w:360px, $h:391px);
+            padding: 48px 16px 0px 16px;
+        }
+        @include desktop {
+            @include container($w:1024px, $h:280px, $flex-direction:row, $align-items:null);
+            padding: 72px 24px 0px 24px;
+        }
+
+        .footer_info-left {
+            display: flex;
+            flex-direction: column;
+            @include desktop {
+                margin-bottom: 139px;
+            }
+
+            .footer_info-contact {
+                font-weight: 600;
+                line-height: 26px;
+                @include mobile {
+                    font-size: 16px;
+                }
+                @include desktop {
+                    font-size: 18px;
+                }
+            }
+
+            .footer_info-link {
+                display: flex;
+                flex-direction: row;
+                @include mobile {
+                    padding-top: 12px;
+                }
+                @include desktop {
+                    padding-top: 16px;
+                }
+
+                    .footer_notion, .footer_instagram, .footer_youtube {
+                        text-decoration: none; display: inline-flex;
+                    }
+
+                    .footer_notion:first-child .footer_info-link_image:first-child {
+                        margin-left: 0px;
+                    }
+
+                .footer_info-link_image {
+                    width: 20px;
+                    height: 20px;
+                    margin-top: 3px;
+                    @include mobile {
+                        margin-left: 24px;
+                    }
+                    @include desktop {
+                        margin-left: 40px;
+                    }
+                }
+            
+                .footer_info-link_text {
+                    font-size: 16px;
+                    line-height: 26px;
+                    padding-left: 6px;
+                }
+            }
+        }
+
+        .footer_info-right {
+            display: flex;
+            flex-direction: column;
+            @include mobile {
+                padding-top: 64px;
+            }
+            @include desktop {
+                padding-left: 140px;
+            }
+
+            .footer_info-click {
+                display: flex;
+                margin-top: 8px;
+                @include mobile {
+                    width: 328px;
+                    height: 100px;
+                    flex-direction: column;
+                    align-items: end;
+                    margin-bottom: 82px;
+                }
+                @include desktop {
+                    width: 488px;
+                    height: 36px;
+                    flex-direction: row;
+                }
+
+                .footer_input_box {
+                    height: 36px;
+                    border-right:0px; 
+                    border-top:0px; 
+                    border-left:0px;
+                    outline: none;
+                    background-color: transparent;
+                    padding: 0px 0px;
+                    @include mobile {
+                        width: 328px;
+                    }
+                    @include desktop {
+                        width: 360px;
+                    }
+                }
+
+                .input::placeholder {
+                    color: #E0E0E0;
+                    font-size: 14px;
+                    margin-bottom: 5px;
+                    @include mobile {
+                        line-height: 24px;
+                    }
+                    @include desktop {
+                        line-height: 20px;
+                    }
+                }
+
+                .footer_input_notice_1 {
+                    @include mobile {
+                        font-size: 8px;
+                        line-height: 20px;
+                        margin-top: 4px;
+                        text-align: end;
+                    }
+                    @include desktop {
+                        display: none;
+                    }
+                }
+
+                .footer-submit-button {
+                    width: 120px;
+                    height: 36px;
+                    background: #DBFD5C;
+                    border-radius: 6px;
+                    color: black;
+                    @include mobile {
+                        margin-top: 4px;
+                        font-size: 14px;
+                        line-height: 20px;
+                    }
+                    @include desktop {
+                        margin-left: 8px;
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }            
+            }
+        
+            .footer_input_notice_2 {
+                @include mobile {
+                    display: none;
+                }
+                @include desktop {
+                    font-size: 8px;
+                    line-height: 20px;
+                    margin-top: 4px;
+                    text-align: end;
+                    margin-right: 128px;
+                }
+            }
+        }    
+    }
+
+    .footer_info-line {
+        width: 100%;
+        border-top: 1px solid #424242;
+        display: flex;
+        align-items: center;
+        @include mobile {
+            height: 69px;
+        }
+        @include desktop {
+            height: 120px;
+        }
+
+        .footer_info-copyright {
+            width: 100%;
+            font-size: 12px;
+            line-height: 20px;
+            color: #9E9E9E;
+            text-align: center;
+        }
+    }
+}

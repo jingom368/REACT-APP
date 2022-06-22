@@ -1,0 +1,57 @@
+@import "../0_basic.scss";
+
+.artist_photo_box {
+    display:flex;
+    flex-direction: column;
+
+    .artist_intro {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+        @include mobile {
+            margin-top: 4px;
+            width: 156px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        @include desktop {
+            margin-top: 8px;
+            width: 309px;
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+
+    .artist_photo_hasom {
+        @include mobile {
+            @include artist_photo($position:relative);
+        }
+        @include desktop {
+            @include artist_photo_d($position:relative);
+        }
+
+        .artist_hasom_none {
+            @include mobile {
+                @include artist_photo($content: url("../../img/oumtt/hasom.png"));
+            }
+
+            @include desktop {
+                @include artist_photo_d($content: url("../../img/oumtt/hasom2.png"));
+            }
+        }
+
+        .artist_hasom_active {
+            @include mobile {
+                @include artist_photo($position:absolute, $display: none,
+                $content: url("../../img/oumtt/hasom_active.png"));
+            }
+
+            @include desktop {
+                @include artist_photo_d($position:absolute, $display: none,
+                $content: url("../../img/oumtt/hasom_active_2.png"));
+            }
+        }
+    }
+}

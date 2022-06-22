@@ -1,0 +1,58 @@
+@import "../0_basic.scss";
+
+.guest_photo_box {
+    display:flex;
+    flex-direction: column;
+
+    .guest_intro {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+
+        @include mobile {
+            margin-top: 8px;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        @include desktop {
+            margin-top: 16px;
+            font-size: 20px;
+            line-height: 32px;
+        }
+    }
+
+    .guest_photo_aran {
+        @include mobile {
+            @include artist_photo($w:328px, $h:240px, $position:relative);
+        }
+        @include desktop {
+            @include artist_photo($w:476px, $h:600px, $mt:64px, $position:relative);
+        }
+
+        .artist_aran_none {
+            @include mobile {
+                @include artist_photo($w:328px, $h:240px,
+                $content: url("../../img/guest/aran.png"));
+            }
+
+            @include desktop {
+                @include artist_photo_d($w:476px, $h:600px,
+                $content: url("../../img/guest/aran.png"));
+            }
+        }
+
+        .artist_aran_active {
+            @include mobile {
+                @include artist_photo($w:328px, $h:240px, $position:absolute, $display: none,
+                $content: url("../../img/guest/aran_active.png"));
+            }
+
+            @include desktop {
+                @include artist_photo_d($w:476px, $h:600px, $position:absolute, $display:none,
+                $content: url("../../img/guest/aran_active_2.png"));
+            }
+        }
+    }
+}

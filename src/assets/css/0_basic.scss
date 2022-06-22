@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Maitree&display=swap');
+
+@font-face {
+    font-family: 'Maitree';
+    src: url("../fonts/RIDIBatang_min.otf") format("opentype");
+    font-style: normal;
+    unicode-range: U+AC00-D7A3;
+}
+
+* {
+    font-family: 'Maitree' !important;                 
+    color: inherit;
+    box-sizing: border-box;
+}
+
+a:link {color:#ffffff;}
+a:visited {color: #ffffff;}
+
+.row_flex {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column_flex {
+    display:flex;
+    flex-direction: column;
+}
+
+.flex_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+// 반응형
+
+$breakpoint-desktop: 1024px;
+@mixin mobile {
+    @media (max-width: #{$breakpoint-desktop - 1px}) {
+      @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$breakpoint-desktop}) {
+      @content;
+    }
+}
+
+@mixin container (
+    $w: 100%,
+    $h: null,
+    $display: flex,
+    $flex-direction: column,
+    $align-items: center,
+    $bg: #000000,
+    $color: if($w == 100%, #ffffff, inherit),
+) {
+    width: $w;
+    height: $h;
+    display: $display;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    background-color: $bg;
+    color: $color;
+}
+
+@mixin artist_photo (
+    $w: 156px,
+    $h: 200px,
+    $object-fit: cover,
+    $mt: null,
+    $position: null,
+    $display: flex,
+    $top: 0px,
+    $content: null,
+) {
+    width: $w;
+    height: $h;
+    object-fit: $object-fit;
+    margin-top: $mt;
+    position: $position;
+    display: $display;
+    top: $top;
+    content: $content;
+}
+
+@mixin artist_photo_d ($w: 309px, $h: 400px, $mt:null, $position: null, $display: flex, $content:null) {
+    @include artist_photo($w:$w, $h:$h, $mt:$mt, $position:$position, $display:$display, $content:$content)
+}

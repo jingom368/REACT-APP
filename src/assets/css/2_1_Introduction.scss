@@ -1,0 +1,89 @@
+@import "./0_basic.scss";
+
+.introduction {
+    @include mobile {
+        @include container($h:480px, $bg:null);
+        padding-top: 48px;
+    }
+    @include desktop {
+        @include container($h:1200px, $bg:null);
+        padding-top: 64px;
+    }
+
+    .intro_box {
+        position: relative;
+        @include mobile {
+            @include container($w:360px, $h:432px, $bg:null);
+        }
+        @include desktop {
+            @include container($w:1024px, $h:1136px, $bg:null);
+        }
+
+        .intro_title {
+            letter-spacing: -0.02em;
+            @include mobile {
+                font-weight: 600;
+                font-size: 22px;
+                line-height: 28px;
+                margin-top: 80px;
+            }
+            @include desktop {
+                font-weight: 500;
+                font-size: 48px;
+                line-height: 68px;
+                margin-top: 240px;
+            }
+        }
+
+        .intro_nature {
+            color: #DBFD5C;
+            letter-spacing: -0.02em;
+            @include mobile {
+                font-size: 14px;
+                line-height: 20px;
+                margin-top: 8px;
+            }
+            @include desktop {
+                font-size: 34px;
+                line-height: 40px;
+                margin-top: 40px;
+            }
+        }
+
+        .intro_line {
+            display: flex;
+            position: relative;
+            @include mobile {
+                width: 328px;
+                height: 212.5px;
+                border-bottom: 1px solid #ffffff;
+                margin-bottom: 83.5px;
+            }
+            @include desktop {
+                width: 477px;
+                height: 216px;
+                border-bottom: 2px solid #ffffff;
+                margin-bottom: 532px;
+            }                        
+        }
+
+        .intro_border {
+            position: absolute;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            @include mobile {
+                column-gap: 12px;
+                width: 318px;
+                height: 40px;
+                top: 336px;
+            }
+
+            @include desktop {
+                column-gap: 18px;
+                width: 472px;
+                height: 44px;
+                top: 598px;
+            }
+        }
+    }
+}

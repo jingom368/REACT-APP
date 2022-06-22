@@ -1,0 +1,19 @@
+import React from 'react'
+import '../../assets/css/components/3_artist_photo.scss'
+
+function ArtistPhoto() {    
+    return (
+        <div className="artist_photo_flex">
+            <div className="artist_photo_hasom">
+                <img className="artist_hasom_none" alt=""/>
+                <img className="artist_hasom_active" alt=""/>
+            </div>
+            <div className="artist_intro">
+                <div>Team 1.</div>
+                <div>오하솜</div>
+            </div>            
+        </div>
+    );
+}
+    
+export default ArtistPhoto;

@@ -1,0 +1,35 @@
+@import "./0_basic.scss";
+
+/* main */
+
+main {
+    width: 100%;
+    height: auto;
+
+    .item_wrapper {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    // 이미지 연구
+    .main_image {
+        display: flex;
+        width: 100%;
+        object-fit: cover;
+        @include mobile {
+            height: 480px;
+            content : url("../img/nature_background.png");
+        }
+        @include desktop {
+            height: 1200px;
+            content : url("../img/nature_background_2.png");
+        }
+    }    
+
+    .item-info-box {
+        position: absolute;
+        width: 100%;
+        top:0px;
+    }
+}

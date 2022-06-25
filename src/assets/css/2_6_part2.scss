@@ -2,110 +2,61 @@
 
 /* part2 */
 
-.part2 {
+.table_box {
     @include mobile {
-        @include container($h:920px);
+        @include container($w:360px, $align-items:null);
+        padding: 40px 16px 56px 16px;
     }
     @include desktop {
-        @include container($h:1292px);
+        @include container($w:1024px, $align-items:null);
+        padding: 160px 24px 40px 24px;
     }
-    
-    .table_box {
+
+    .table_title {
+        font-weight: 600;
+        letter-spacing: -0.02em;
         @include mobile {
-            @include container($w:360px, $h:920px, $align-items:null);
-            padding: 40px 16px 56px 16px;
+            font-size: 22px;
+            line-height: 36px;
         }
         @include desktop {
-            @include container($w:1024px, $h:1292px, $align-items:null);
-            padding: 160px 24px 40px 24px;
+            font-size: 40px;
+            line-height: 64px;
         }
+    }
 
-        .table_title {
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            @include mobile {
-                font-size: 22px;
-                line-height: 36px;
-            }
-            @include desktop {
-                font-size: 40px;
-                line-height: 64px;
-            }
+    .table_profile {
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        @include mobile {
+            font-size: 18px;
+            line-height: 24px;
+            margin-top: 32px;
         }
-
-        .table_profile {
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            @include mobile {
-                font-size: 18px;
-                line-height: 24px;
-                margin-top: 32px;
-            }
-            @include desktop {
-                font-size: 28px;
-                line-height: 36px;
-                margin-top: 64px;
-            }
+        @include desktop {
+            font-size: 28px;
+            line-height: 36px;
+            margin-top: 64px;
         }
+    }
 
-        $artists: (yochan, hyunjin, jonghwan, dahyun, yunseo, youngju);
-
-        @each $artist in $artists {
-            @include mobile {
-                .table_photo_#{$artist} {
-                    @if ($artist == yochan or $artist == hyunjin) {
-                        @include artist_photo($mt:12px, $position:relative);
-                    } @else {
-                        @include artist_photo($mt:24px, $position:relative);
-                    }
-                }
-                .artist_#{$artist}_none {
-                    @include artist_photo(
-                        $content: url("../img/dancer/#{$artist}.png")
-                    );
-                }
-                .artist_#{$artist}_active {
-                    @include artist_photo($position:absolute, $display: none,
-                        $content: url("../img/dancer/#{$artist}_active.png")
-                    );
-                }
-            }
-    
-            @include desktop {
-                .table_photo_#{$artist} {
-                    @include artist_photo_d($mt:24px, $position:relative);
-                }
-                .artist_#{$artist}_none {
-                    @include artist_photo_d (
-                        $content: url("../img/dancer/#{$artist}_2.png")
-                    );
-                }
-                .artist_#{$artist}_active {
-                    @include artist_photo_d ($position:absolute, $display: none,
-                        $content: url("../img/dancer/#{$artist}_active_2.png")
-                    );
-                }
-            }
+    .table_photo_grid {
+        display: grid;
+        @include mobile {
+            width: 328px;
+            height: 732px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 24px 16px;
+            margin-top: 12px;
         }
-
-        .table_intro {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            font-weight: 500;
-            letter-spacing: -0.02em;
-            @include mobile {
-                margin-top: 4px;
-                width: 156px;
-                font-size: 14px;
-                line-height: 20px;
-            }
-            @include desktop {
-                margin-top: 8px;
-                width: 309px;
-                font-size: 20px;
-                line-height: 32px;
-            }
+        @include desktop {
+            width: 976px;
+            height: 904px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 24px 24.5px;
+            margin-top: 24px;
         }
     }
 }

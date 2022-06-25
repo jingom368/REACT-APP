@@ -50,9 +50,11 @@ $breakpoint-desktop: 1024px;
     }
 }
 
+// container
+
 @mixin container (
     $w: 100%,
-    $h: null,
+    $h: 100%,
     $display: flex,
     $flex-direction: column,
     $align-items: center,
@@ -68,26 +70,56 @@ $breakpoint-desktop: 1024px;
     color: $color;
 }
 
-@mixin artist_photo (
-    $w: 156px,
-    $h: 200px,
-    $object-fit: cover,
-    $mt: null,
-    $position: null,
+// 2_4_program
+
+@mixin program_list (
+    $w: 328px,
+    $h: 44px,
+    $bg: #FFFFFF,
+    $p: 12px 14px,
+    $pb: if($h !=44px, 18px, null),
+    $box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.12),
+    $border-radius: 8px,
+    $color: inherit,
     $display: flex,
-    $top: 0px,
-    $content: null,
+    $font-size: 14px,
+    $line-height: 20px,
+    $letter-spacing: -0.02em,
 ) {
     width: $w;
     height: $h;
-    object-fit: $object-fit;
-    margin-top: $mt;
-    position: $position;
+    background: $bg;
+    padding: $p;
+    padding-bottom: $pb;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    color: $color;
     display: $display;
-    top: $top;
-    content: $content;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
 }
 
-@mixin artist_photo_d ($w: 309px, $h: 400px, $mt:null, $position: null, $display: flex, $content:null) {
-    @include artist_photo($w:$w, $h:$h, $mt:$mt, $position:$position, $display:$display, $content:$content)
+@mixin program_list_d (
+    $w: 976px,
+    $h: 80px,
+    $p: 22px 32px,
+    $pb: if($h !=80px, 34px, null),
+    $border-radius: 12px,
+    $display: flex,
+    $font-size: 24px,
+    $line-height: 36px,
+    $letter-spacing: -0.02em,
+) {
+    @include program_list($w:$w, $h:$h, $p:$p, $pb:$pb, $border-radius:$border-radius, $display:$display, $font-size:$font-size, $line-height:$line-height, $letter-spacing:$letter-spacing);
+}
+
+@mixin program_list_position (
+    $position: relative,
+    $justify-content: space-between,
+    $align-items: center,
+) {
+    position: $position;
+    justify-content: $justify-content;
+    align-items: $align-items;
 }

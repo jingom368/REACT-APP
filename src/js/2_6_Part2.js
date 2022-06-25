@@ -1,78 +1,30 @@
 import React from 'react'
 import '../assets/css/2_6_part2.scss'
+import ArtistPhoto from './component/2_Artist_photo'
 
 function Part2() {
-    return ( 
-        <section id="part2" className="part2">
-            <div className="table_box">
-                <div className="table_title">Part2. The Table & The Chairs</div>
-                <div className="table_profile">Dancer Profile</div>
+    const artist_info = [
+        {team:"Director", name:"강요찬", image:"yochan"},
+        {team:"dancer", name:"육현진", image:"hyunjin"},
+        {team:"dancer", name:"이종환", image:"jonghwan"},
+        {team:"dancer", name:"김다현", image:"dahyun"},
+        {team:"dancer", name:"김윤서", image:"yunseo"},
+        {team:"dancer", name:"예영주", image:"youngju"},
+    ]
+    const photo_box = []
+    for(let i=0; i<artist_info.length; i++) {
+        photo_box.push(<ArtistPhoto artist_info={artist_info[i]} artist_group="dancer" artist_class="artist"></ArtistPhoto>)
+    }
+    return (
 
-                <div className="flex_wrap">
-                    <div className="column_flex">
-                        <div className="table_photo_yochan">
-                            <img className="artist_yochan_none" alt="" />
-                            <img className="artist_yochan_active" alt="" />
-                        </div>
-                        <div className="table_intro">
-                            <div>Director</div>
-                            <div>강요찬</div>
-                        </div>            
-                    </div>
-                    <div className="column_flex">
-                        <div className="table_photo_hyunjin">
-                            <img className="artist_hyunjin_none" alt="" />
-                            <img className="artist_hyunjin_active" alt="" />
-                        </div>
-                        <div className="table_intro">
-                            <div>Dancer</div>
-                            <div>육현진</div>
-                        </div>
-                    </div>
-                    <div className="column_flex">
-                        <div className="table_photo_jonghwan">
-                            <img className="artist_jonghwan_none" alt="" />
-                            <img className="artist_jonghwan_active" alt="" />
-                        </div>
-                        <div className="table_intro">
-                            <div>Dancer</div>
-                            <div>이종환</div>
-                        </div>
-                    </div>
-                    <div className="column_flex">
-                        <div className="table_photo_dahyun">
-                            <img className="artist_dahyun_none" alt="" />
-                            <img className="artist_dahyun_active" alt="" />
-                        </div>
-                        <div className="table_intro">
-                            <div>Dancer</div>
-                            <div>김다현</div>
-                        </div>
-                    </div>
-                    <div className="column_flex">
-                        <div className="table_photo_yunseo">
-                            <img className="artist_yunseo_none" alt="" />
-                            <img className="artist_yunseo_active" alt="" />
-                        </div>
-                        <div className="table_intro">
-                            <div>Dancer</div>
-                            <div>김윤서</div>
-                        </div>
-                    </div>
-                    <div className="column_flex">
-                        <div className="table_photo_youngju">
-                            <img className="artist_youngju_none" alt="" />
-                            <img className="artist_youngju_active" alt="" />
-                        </div>
-                        <div className="table_intro">
-                            <div>Dancer</div>
-                            <div>예영주</div>
-                        </div>
-                    </div>
-                </div>
+        <div className="table_box">
+            <div className="table_title">Part2. The Table & The Chairs</div>
+            <div className="table_profile">Dancer Profile</div>
+            <div className="table_photo_grid">
+                {photo_box}
             </div>
+        </div>
 
-        </section>
     );
 }
     

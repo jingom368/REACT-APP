@@ -150,6 +150,7 @@ function App() {
       setMode('READ');
     }}></Update>
   }
+  
   return (
     <div>
       <Header title="WEB" onChangeMode={()=>{

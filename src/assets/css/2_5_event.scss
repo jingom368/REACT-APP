@@ -2,184 +2,48 @@
 
 /* event */
 
-@include mobile {
-
-    .event {
-        @include container($h:868px, $bg: #F7FCE7);
-        color: black;
+// @include mobile {
     
-        .event_box {
-            @include container($w:360px, $h:868px, $align-items:null, $bg: #F7FCE7);
-            padding: 40px 16px 56px 16px;        
-        
-            .event_title {
-                font-weight: 600;
-                font-size: 18px;
-                line-height: 24px;
-                letter-spacing: -0.02em;
-            }
-        
-            .event_text {
-                font-size: 14px;
-                line-height: 22px;
-                letter-spacing: -0.02em;
-                margin-top: 24px;
-            }
+    .event_box {
+        @include container($w:360px, $align-items:null, $bg: #F7FCE7);
+        padding: 40px 16px 56px 16px;        
+    
+        .event_title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+            letter-spacing: -0.02em;
+        }
+    
+        .event_text {
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: -0.02em;
+            margin-top: 24px;
+        }
 
-            .event_notice {
-                font-size: 12px;
-                line-height: 20px;
-                letter-spacing: -0.02em;
-                color: #616161;
-                margin-top: 8px;
-            }
+        .event_notice {
+            font-size: 12px;
+            line-height: 20px;
+            letter-spacing: -0.02em;
+            color: #616161;
+            margin-top: 8px;
+        }
 
-            form {
-                .event_list_1 {
-                    margin-top: 12px;
-                
-                    .event_list_number {
-                        font-size: 16px;
-                        line-height: 20px;
-                        letter-spacing: -0.02em;
-                    }
-
-                    .event_list_choice {
-                        width: 256px;
-                        height: 44px;
-                        box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.12);
-                        border-radius: 8px;
-                        padding: 12px 14px;
-                        -webkit-appearance:none; /* for chrome */
-                        -moz-appearance:none; /*for firefox*/ 
-                        appearance:none;
-                        background: url("../svg/polygon.svg") no-repeat 94% 50%/14px 12px;
-                        font-size: 14px;
-                        line-height: 20px;
-                        background-color: #ffffff;
-                        color: #616161;
-                        border:none;
-                        outline: none;
-
-                        .event_list_choice_1 {
-                            width: 200px;
-                            height: 30px;
-                            font-size: 14px;
-                            line-height: 20px;
-                            letter-spacing: -0.02em;
-                            color: #616161;
-                        }
-                    }
-
-                    select::-ms-expand{
-                        display:none;/*for IE10,11*/
-                    }
-                }
-
-                .event_list_1:first-child {
-                    margin-top: 32px;
-                }
-
-                .event_list_name {
-                    font-size: 14px;
-                    line-height: 24px;
-                    margin-top: 48px;
-                }
-
-                .event_name {
-                    width: 328px;
-                    height: 36px;
-                    border-right:0px; 
-                    border-top:0px; 
-                    border-left:0px; 
-                    border-bottom: 1px solid #BDBDBD;;
-                    outline: none;
-                    margin-top: 4px;
-                    padding: 0px 0px;
-                    background-color: transparent;
-                    border-radius: 0px;
-                }
-
-                .event_list_phonenumber {
-                    font-size: 14px;
-                    line-height: 24px;
-                    margin-top: 24px;
-                }
-
-                .event_phonenumber {
-                    width: 328px;
-                    height: 36px;
-                    border-right:0px; 
-                    border-top:0px; 
-                    border-left:0px;
-                    border-bottom: 1px solid #BDBDBD;;
-                    outline: none;
-                    margin-top: 4px;
-                    padding: 0px 0px;
-                    background-color: transparent;
-                    border-radius: 0px;
-                }
-
-                .event_list_notice_2 {
-                    font-size: 12px;
-                    line-height: 20px;
-                    letter-spacing: -0.005em;
-                    margin-top: 2px;
-                    color: #616161;
-                }
-
-                .event_list_button {
-                    width: 328px;
-                    height: 56px;
-                    background: #DBFD5C;
-                    box-shadow: 0px -1px 4px rgba(255, 255, 255, 0.12), 0px 2px 16px rgba(0, 0, 0, 0.24);
-                    border-radius: 12px;
-                    margin-top: 32px;
-                    font-size: 16px;
-                    line-height: 22px;       
-                    color: black;
-                    border: none;
-                }
-
-                .event_list_agree {
-                    display:flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    margin-top: 18px;
-
-                    .event_list_text {
-                        font-size: 14px;
-                        line-height: 24px;
-                    }
-
-                    .event_list_check {
-                        width: 20px;
-                        height: 24px;
-                    }
-
-                    .event_list_check input[type="checkbox"] {
-                        display: none;
-                    }
-                
-                    .event_list_check input[type="checkbox"] + label {
-                        display: flex;
-                        width: 20px;
-                        height: 20px;
-                        margin: 2px 0px 0px 0px;
-                        background: url("../svg/checkbox_none.svg") no-repeat center/16px 16px;
-                    }
-                
-                    .event_list_check input[type="checkbox"]:checked + label {
-                        background: url("../svg/checkbox_check.svg") no-repeat center/16px 16px; float: right;
-                    }
-                }
+        form {
+            .event_select {
+                display: grid;
+                grid-template-rows: repeat(5, 1fr);
+                row-gap: 12px;
+                margin-top: 32px;
             }
         }
     }
-}
+// }
 
-@include desktop {
-    .event {
-        display: none;
-    }
-}
+
+// @include desktop {
+//     .event_box {
+//         display: none;
+//     }
+// }

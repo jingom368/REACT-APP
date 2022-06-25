@@ -13,20 +13,15 @@ import Support2 from './2_9_Support2'
 function Main() {
     return ( 
     <main>
-        <div className="item_wrapper">
-            <img className="main_image" alt=""/>
-            <div className="item-info-box">
-                <Introduction></Introduction>
-            </div>
-        </div>
-        <Guest></Guest>
-        <Withyou></Withyou>
-        <Program></Program>
-        <Event></Event>
-        <Part2></Part2>
-        <Chair></Chair>
-        <Support1></Support1>
-        <Support2></Support2>
+        <div className="item"><div className='item_box'><Introduction></Introduction></div></div>
+        <div className="item"><div className='item_box'><Guest ></Guest></div></div>
+        <div className="item"><div className='item_box'><Withyou ></Withyou></div></div>
+        <div className="item"><div className='item_box'><Program ></Program></div></div>
+        <div className="item"><div className='item_box'><Event ></Event></div></div>
+        <div className="item"><div className='item_box'><Part2 ></Part2></div></div>
+        <div className="item"><div className='item_box'><Chair ></Chair></div></div>
+        <div className="item"><div className='item_box'><Support1 ></Support1></div></div>
+        <div className="item"><div className='item_box'><Support2 ></Support2></div></div>
     </main> 
     );
 }

@@ -2,97 +2,44 @@
 
 /* guest */
 
-.guest {
+.guest_box {
     @include mobile {
-        @include container($h:732px);
+        @include container($w:360px, $align-items:null);
+        padding: 40px 16px 56px 16px;
     }
     @include desktop {
-        @include container($h:1104px);
+        @include container($w:1024px, $align-items:null);
+        padding: 160px 24px 168px 24px;
     }
 
-    .guest_box {
+    .guset_title {
+        font-weight: 600;
+        letter-spacing: -0.02em;
         @include mobile {
-            @include container($w:360px, $h:732px, $align-items:null);
-            padding: 40px 16px 56px 16px;
+            font-size: 22px;
+            line-height: 36px;
         }
         @include desktop {
-            @include container($w:1024px, $h:1104px, $align-items:null);
-            padding: 160px 24px 168px 24px;
+            font-size: 40px;
+            line-height: 64px;
         }
+    }
 
-        .guset_title {
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            @include mobile {
-                font-size: 22px;
-                line-height: 36px;
-            }
-            @include desktop {
-                font-size: 40px;
-                line-height: 64px;
-            }
+    .guest_photo_grid {
+        display: grid;
+        @include mobile {
+            width: 328px;
+            height: 568px;
+            grid-template-rows: repeat(2, 1fr);
+            row-gap: 24px;
+            margin-top: 32px;
         }
-
-        .guest_photo_wrap {
-            @include desktop {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .guest_intro {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                font-weight: 500;
-                letter-spacing: -0.02em;
-
-                @include mobile {
-                    margin-top: 8px;
-                    font-size: 16px;
-                    line-height: 24px;
-                }
-                @include desktop {
-                    margin-top: 16px;
-                    font-size: 20px;
-                    line-height: 32px;
-                }
-            }
-
-            $artists: (aran, hyekyung);
-            
-            @each $artist in $artists {
-                @include mobile {
-                    .guest_photo_#{$artist} {
-                        @if ($artist == aran) {
-                            @include artist_photo($w:328px, $h:240px, $mt:32px, $position:relative);
-                        } @else {
-                            @include artist_photo($w:328px, $h:240px, $mt:24px, $position:relative);
-                        }
-                    }
-                    .artist_#{$artist}_none {
-                        @include artist_photo($w:328px, $h:240px);
-                        content: url("../img/guest/#{$artist}.png");
-                    }
-                    .artist_#{$artist}_active {
-                        @include artist_photo($w:328px, $h:240px, $position:absolute, $display: none,
-                        $content: url("../img/guest/#{$artist}_active.png"));
-                    }
-                }
-                @include desktop {
-                    .guest_photo_#{$artist} {
-                        @include artist_photo_d($w:476px, $h:600px, $mt:64px, $position:relative);
-                    }
-                    .artist_#{$artist}_none {
-                        @include artist_photo_d($w:476px, $h:600px);
-                        content: url("../img/guest/#{$artist}.png");
-                    }
-                    .artist_#{$artist}_active {
-                        @include artist_photo_d($w:476px, $h:600px, $position:absolute, $display:none,
-                        $content: url("../img/guest/#{$artist}_active_2.png"));
-                    }
-                }
-            }
+        @include desktop {
+            width: 976px;
+            height: 648px;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 24px;
+            margin-top: 64px;
         }
     }
 }

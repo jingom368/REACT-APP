@@ -1,0 +1,58 @@
+@import "../0_basic.scss";
+
+.program_list_down_1 {
+    @include mobile {
+        @include program_list();
+        @include program_list_position();
+    }
+    @include desktop {
+        @include program_list_d();
+        @include program_list_position();
+    }
+}
+
+.program_list_1 {
+    flex-direction: column;    
+    @include mobile {
+        @include program_list($h:116px, $display:none);
+    }
+    @include desktop {
+        @include program_list_d($h:180px, $display:none);
+    }
+
+    .progrma_list_title {
+        letter-spacing: -0.02em;
+        @include mobile {
+            font-size: 14px;
+            line-height: 20px;
+        }
+        @include desktop {
+            font-size: 24px;
+            line-height: 36px;
+        }
+    }
+
+    .program_list_text {
+        letter-spacing: -0.02em;
+        @include mobile {
+            line-height: 22px;
+            margin-top: 22px;
+        }
+        @include desktop {
+            font-size: 18px;
+            line-height: 28px;
+            margin-top: 32px;
+        }
+    }
+}
+
+.program_polygon {
+    @include mobile {
+        width: 14px;
+        height: 12px;
+    }
+    @include desktop {
+        width: 28px;
+        height: 24px;
+    }
+}

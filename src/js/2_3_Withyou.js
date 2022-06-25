@@ -1,70 +1,95 @@
 import React from 'react'
 import '../assets/css/2_3_withyou.scss'
-import ArtistPhoto from './component/3_Artist_photo'
+import ArtistPhoto from './component/2_Artist_photo'
+
+// const dancer_photo = {
+//     "dancer_image": [
+//       "yochan", "hyunjin", "jonghwan", "dahyun", "yunseo", "youngju",
+//     ],
+//     "dancer_role": [
+//       "Director", "Dancer", "Dancer", "Dancer", "Dancer", "Dancer",
+//     ],
+//     "dancer_name": [
+//       "강요찬", "육현진", "이종환", "김다현", "김윤서", "예영주",
+//     ],
+// }
+
+// const oumtt_photo = {
+//     "oumtt_image": [
+//       "hasom", "hahyeon", "seoyeon", "minseop", "sohyun", "sohee",
+//     ],
+//     "oumtt_team": [
+//       "Team1", "Team2", "Team3", "Team3", "Team4", "Team5",
+//     ],
+//     "oumtt_name": [
+//       "오하솜", "김하현", "인서연", "김민섭", "배소현", "한소희",
+//     ],
+//   }
+
+// const dancer_image = dancer_photo.dancer_image.map((img, index) =>
+//   {
+//     return <img key={index} className="artist_none" alt="~" src={require('../../assets/img/guest/' + img + '.png').default} />
+//   }  
+// )
+
+// const oumtt_image = oumtt_photo.oumtt_image.map((img, index) =>
+//   {
+//     return <img key={index} className="artist_none" alt="~" src={require('../../assets/img/oumtt/' + img + '.png').default} />
+//   }  
+// )
+
+// function Photo(props) {
+//   let Image = () => {
+//     return (
+//       <div>
+//         {dancer_image}
+//       </div>
+//     )
+//   };
+
+//   return <div>
+//     {Image()}
+//   </div>
+// } 
+
+// function Oumtt(props) {
+//   let Image = () => {
+//     return (
+//       <div>
+//         {oumtt_image}
+//       </div>
+//     )
+//   };
+
+//   return <div>
+//     {Image()}
+//   </div>
+// } 
 
 function Withyou() {
-    return ( 
-        <section id="withyou" className="withyou">
+    const artist_info =  
+    [ 
+        {team:"Team1", name:"오하솜", image:"hasom"},
+        {team:"Team2", name:"김하현", image:"hahyeon"},
+        {team:"Team3", name:"인서연", image:"seoyeon"},
+        {team:"Team3", name:"김민섭", image:"minseop"},
+        {team:"Team4", name:"배소현", image:"sohyun"},
+        {team:"Team5", name:"한소희", image:"sohee"},
+    ]
+    const photo_box = []
+    for(let i=0; i<artist_info.length; i++) {
+        photo_box.push(<ArtistPhoto artist_info={artist_info[i]} artist_group="oumtt" artist_class="artist"></ArtistPhoto>)
+    }
+    return (
 
         <div className="withyou_box">
             <div className="withyou_title">Part1. With You</div>
             <div className="withyou_profile">Dancer Profile</div>
-            <div className="flex_wrap">
-                <ArtistPhoto></ArtistPhoto>
-                <div className="column_flex">
-                    <div className="withyou_photo_hahyeon">
-                        <img className="artist_hahyeon_none" alt=""/>
-                        <img className="artist_hahyeon_active" alt=""/>
-                    </div>
-                    <div className="withyou_intro">
-                        <div>Team 2.</div>
-                        <div>김하현</div>
-                    </div>
-                </div>
-                <div className="column_flex">
-                    <div className="withyou_photo_seoyeon">
-                        <img className="artist_seoyeon_none" alt=""/>
-                        <img className="artist_seoyeon_active" alt=""/>
-                    </div>
-                    <div className="withyou_intro">
-                        <div>Team 3.</div>
-                        <div>인서연</div>
-                    </div>
-                </div>
-                <div className="column_flex">
-                    <div className="withyou_photo_minseop">
-                        <img className="artist_minseop_none" alt=""/>
-                        <img className="artist_minseop_active" alt=""/>
-                    </div>
-                    <div className="withyou_intro">
-                        <div>Team 3.</div>
-                        <div>김민섭</div>
-                    </div>
-                </div>
-                <div className="column_flex">
-                    <div className="withyou_photo_sohyun">
-                        <img className="artist_sohyun_none" alt=""/>
-                        <img className="artist_sohyun_active" alt=""/>
-                    </div>
-                    <div className="withyou_intro">
-                        <div>Team 4.</div>
-                        <div>배소현</div>
-                    </div>
-                </div>
-                <div className="column_flex">
-                    <div className="withyou_photo_sohee">
-                        <img className="artist_sohee_none" alt=""/>
-                        <img className="artist_sohee_active" alt=""/>
-                    </div>
-                    <div className="withyou_intro">
-                        <div>Team 5.</div>
-                        <div>한소희</div>
-                    </div>
-                </div>
+            <div className="withyou_photo_grid">
+                {photo_box}
             </div>
         </div>
-
-        </section>
+        
     );
 }
 
